@@ -37,7 +37,7 @@ var listaDePedidosTestes = new List<Pedido>();
 
 string mensagemDeBoasVindas = "Boas vindas ao COMEX";
 
-async Task ExibirOpcoesDoMenu()
+async Task ExibirOpcoesDoMenu(string mensagemDeBoasVindas, List<Produto> listaDeProdutosTestes, List<Pedido> listaDePedidosTestes)
 {
     SistemaUtil.ExibirLogo(mensagemDeBoasVindas);
     Console.WriteLine("\nDigite 1 Criar Produto");
@@ -87,7 +87,7 @@ async Task ExibirOpcoesDoMenu()
     Console.WriteLine("\nDigite uma tecla para voltar ao menu principal");
     Console.ReadKey();
     Console.Clear();
-    await ExibirOpcoesDoMenu();
+    await ExibirOpcoesDoMenu(mensagemDeBoasVindas, listaDeProdutosTestes, listaDePedidosTestes);
 }
 
-await ExibirOpcoesDoMenu();
+await ExibirOpcoesDoMenu(mensagemDeBoasVindas, listaDeProdutosTestes, listaDePedidosTestes);
