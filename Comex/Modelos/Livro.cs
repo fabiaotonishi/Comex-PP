@@ -1,4 +1,4 @@
-﻿namespace Comex;
+﻿namespace Comex.Modelos;
 
 public class Livro : Produto, IIdentificavel
 {
