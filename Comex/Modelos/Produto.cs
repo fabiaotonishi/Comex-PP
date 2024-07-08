@@ -8,6 +8,11 @@ public class Produto
     {
         Nome = nome;
     }
+    public Produto()
+    {
+    }
+
+    public int Id { get; set; }
 
     [JsonPropertyName("title")]
     public string Nome { get; set; }
