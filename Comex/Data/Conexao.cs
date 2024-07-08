@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Comex.Data
 {
-    public class Connection
+    public class Conexao
     {
         public readonly string conexaoBd = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ComexBd;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 

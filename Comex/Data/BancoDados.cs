@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Comex.Data
 {
-    public class Database : DbContext
+    public class BancoDados : DbContext
     {
         string conexaoBd;
         public DbSet<Produto> Produtos { get; set; }
 
-        public Database(string conexao)
+        public BancoDados(string conexao)
         {
             conexaoBd = conexao;
         }

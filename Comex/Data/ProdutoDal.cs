@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Comex.Data
 {
-    public class ProdutoDal : Connection
+    public class ProdutoDal : Conexao
     {
         public int Incluir(Produto produto)
         {

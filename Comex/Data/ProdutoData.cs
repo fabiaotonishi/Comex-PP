@@ -2,9 +2,9 @@
 
 namespace Comex.Data
 {
-    public class ProdutoData : Connection
+    public class ProdutoData : Conexao
     {
-        Database? database;
+        BancoDados? bancoDados;
 
         public Produto Incluir(Produto produto)
         {
@@ -12,10 +12,10 @@ namespace Comex.Data
             {
                 if (produto.Id == 0)
                 {
-                    using (database = new Database(this.conexaoEf))
+                    using (bancoDados = new BancoDados(this.conexaoEf))
                     {
-                        database.Produtos.Add(produto);
-                        database.SaveChanges();
+                        bancoDados.Produtos.Add(produto);
+                        bancoDados.SaveChanges();
                     }
                 }
                 return produto;
@@ -33,10 +33,10 @@ namespace Comex.Data
             {
                 if (produto.Id > 0)
                 {
-                    using (database = new Database(this.conexaoEf))
+                    using (bancoDados = new BancoDados(this.conexaoEf))
                     {
-                        database.Produtos.Update(produto);
-                        database.SaveChanges();
+                        bancoDados.Produtos.Update(produto);
+                        bancoDados.SaveChanges();
                     }
                 }
                 return produto;
@@ -54,11 +54,11 @@ namespace Comex.Data
             {
                 if (id > 0)
                 {
-                    using (database = new Database(this.conexaoEf))
+                    using (bancoDados = new BancoDados(this.conexaoEf))
                     {
-                        var produto = database.Produtos.FirstOrDefault(e => e.Id == id);
-                        database.Produtos.Remove(produto);
-                        database.SaveChanges();
+                        var produto = bancoDados.Produtos.FirstOrDefault(e => e.Id == id);
+                        bancoDados.Produtos.Remove(produto);
+                        bancoDados.SaveChanges();
                         return true;
                     }
                 }
@@ -76,9 +76,9 @@ namespace Comex.Data
         {
             try
             {
-                using (database = new Database(this.conexaoEf))
+                using (bancoDados = new BancoDados(this.conexaoEf))
                 {
-                    var produto = database.Produtos.FirstOrDefault(e => e.Id == id);
+                    var produto = bancoDados.Produtos.FirstOrDefault(e => e.Id == id);
                     return produto;
                 }
             }
@@ -94,9 +94,9 @@ namespace Comex.Data
         {
             try
             {
-                using (database = new Database(this.conexaoEf))
+                using (bancoDados = new BancoDados(this.conexaoEf))
                 {
-                    var produtos = database.Produtos.ToList();
+                    var produtos = bancoDados.Produtos.ToList();
                     return produtos;
                 }
             }
